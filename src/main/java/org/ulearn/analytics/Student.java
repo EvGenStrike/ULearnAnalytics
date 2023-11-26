@@ -6,6 +6,7 @@ public class Student {
     private String name;
     private String surname;
     private String group;
+    private String city;
     private ArrayList<TaskResult> taskResults = new ArrayList<>();
 
     public Student(String name, String surname, String group){
@@ -34,13 +35,21 @@ public class Student {
         return taskResults;
     }
 
+    public void setCity(String city){
+        this.city = city;
+    }
+
+    public String getCity(){
+        return this.city;
+    }
+
     @Override
     public String toString(){
         var sb = new StringBuilder();
-        sb.append(String.format("%s %s;%s;%n", name, surname, group));
-        for (var taskResult : taskResults){
-            sb.append(String.format("%s%n", taskResult.toString()));
-        }
+        sb.append(String.format("%s %s;group=%s;city=%s;", name, surname, group, city));
+//        for (var taskResult : taskResults){
+//            sb.append(String.format("%n%s%n", taskResult.toString()));
+//        }
         return sb.toString();
     }
 }

@@ -1,5 +1,8 @@
 package org.ulearn.analytics;
 
+import com.vk.api.sdk.exceptions.ApiException;
+import com.vk.api.sdk.exceptions.ClientException;
+
 public class Main {
     private static Data data;
 
@@ -7,9 +10,12 @@ public class Main {
         var csvFileName = "basicprogramming_2_1.csv";
         var csvReader = new CSVReader();
         data = csvReader.buildDataFrom(csvFileName);
-        printTopics(data);
+        var vkReader = new VkReader(data);
+        vkReader.addCitiesToStudents();
+
+        //printTopics(data);
         //printTasks(data);
-        //printStudents(data);
+        printStudents(data);
     }
 
     private static void printTopics(Data data){

@@ -2,11 +2,13 @@ package org.ulearn.analytics;
 
 import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ClientException;
+import org.ulearn.analytics.db.DBRepository;
+import org.ulearn.analytics.db.DB_ORMRepository;
 
 public class Main {
     private static Data data;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         var csvFileName = "basicprogramming_2_1.csv";
         var csvReader = new CSVReader();
         data = csvReader.buildDataFrom(csvFileName);
@@ -15,7 +17,22 @@ public class Main {
 
         //printTopics(data);
         //printTasks(data);
-        printStudents(data);
+        //printStudents(data);
+
+        //DBRepository.connect();
+        //DBRepository.createTableStudents();
+        //DBRepository.saveStudents(data.getStudents());
+        //System.out.println(DBRepository.getStudents());
+
+        var dbOrm = new DB_ORMRepository();
+        dbOrm.connect();
+        dbOrm.createTable();
+        dbOrm.saveStudents(data.getStudents());
+
+        System.out.println(dbOrm.getStudents());
+        System.out.println(dbOrm.getStudentsByFullName("Евгений", "Петряков"));
+
+        dbOrm.close();
     }
 
     private static void printTopics(Data data){

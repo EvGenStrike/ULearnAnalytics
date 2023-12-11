@@ -28,6 +28,7 @@ public class VkReader {
                     continue;
                 }
                 var city = optionalCity.get().getCity();
+                System.out.println(city);
                 if (city == null){
                     continue;
                 }

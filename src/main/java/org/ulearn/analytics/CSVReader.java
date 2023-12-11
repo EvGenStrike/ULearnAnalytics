@@ -120,10 +120,13 @@ public class CSVReader {
 
     private Student buildStudent(String[] values){
         var splittedNameSurname = values[0].split(" ");
-        var name = splittedNameSurname[0].strip();
         var surname = splittedNameSurname[0].strip();
+        var name = "";
+        if (splittedNameSurname.length == 2){
+            name = splittedNameSurname[1].strip();
+        }
         if (splittedNameSurname.length > 2){
-            surname = values[0].substring(values[0].indexOf(" ")).strip();
+            name = values[0].substring(values[0].indexOf(" ")).strip();
         }
         var group = values[1];
         var student = new Student(name, surname, group);

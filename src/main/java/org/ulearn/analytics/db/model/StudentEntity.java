@@ -3,15 +3,15 @@ package org.ulearn.analytics.db.model;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-@DatabaseTable(tableName = "studentsCities")
-public class StudentCityEntity {
+@DatabaseTable(tableName = "student")
+public class StudentEntity {
     public static final String NAME_COLUMN = "name";
     public static final String SURNAME_COLUMN = "surname";
     public static final String GROUP_COLUMN = "group";
     public static final String CITY_COLUMN = "city";
 
     @DatabaseField(generatedId = true)
-    private long studentId;
+    private long studentID;
 
     @DatabaseField(canBeNull = false)
     private String name;
@@ -25,9 +25,9 @@ public class StudentCityEntity {
     @DatabaseField(canBeNull = true)
     private String city;
 
-    public StudentCityEntity(){}
+    public StudentEntity(){}
 
-    public StudentCityEntity(String name, String surname, String group, String city){
+    public StudentEntity(String name, String surname, String group, String city){
         this.name = name;
         this.surname = surname;
         this.group = group;
@@ -36,7 +36,11 @@ public class StudentCityEntity {
 
     @Override
     public String toString(){
-        return String.format("StudentCityEntity{%nname=%s%nsurname=%s%ngroup=%s%ncity=%s%n}%n",
+        return String.format("StudentEntity{%nname=%s%nsurname=%s%ngroup=%s%ncity=%s%n}%n",
                 name, surname, group, city);
+    }
+
+    public long getStudentID(){
+        return studentID;
     }
 }

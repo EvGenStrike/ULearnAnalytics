@@ -26,8 +26,12 @@ public class Main {
 
         var dbOrm = new DB_ORMRepository();
         dbOrm.connect();
-        dbOrm.createTable();
+        dbOrm.createTables();
+
         dbOrm.saveStudents(data.getStudents());
+        dbOrm.saveTopics(data.getTopics());
+        dbOrm.saveTasks(data.getTasks());
+        dbOrm.saveTaskResults(data.getTaskResults());
 
         System.out.println(dbOrm.getStudents());
         System.out.println(dbOrm.getStudentsByFullName("Евгений", "Петряков"));

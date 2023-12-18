@@ -31,8 +31,38 @@ public class Task {
         return taskName;
     }
 
+    public Topic getTopic(){
+        return topic;
+    }
+
     @Override
     public String toString(){
         return String.format("%s;%s;%s;%s", taskName, taskType, maxPoints, topic.getTopicName());
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (object == this) {
+            return true;
+        }
+        if (!(object instanceof Task)) {
+            return false;
+        }
+        Task task = (Task) object;
+
+        return task.taskType == taskType
+                && task.maxPoints == maxPoints
+                && task.taskName.equals(taskName)
+                && task.topic.equals(topic);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + taskType.ordinal();
+        result = 31 * result + maxPoints;
+        result = 31 * result + (taskName != null ? taskName.hashCode() : 0);
+        result = 31 * result + topic.hashCode();
+        return result;
     }
 }

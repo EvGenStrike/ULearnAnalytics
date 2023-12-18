@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31c2849a-6a05-4bdb-8d34-eab1a61ac456" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basicprogramming_2_1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/basicprogramming_2_1.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/test.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/CSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/CSVReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/Data.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/VkReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/VkReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/TaskResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/TaskResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/Topic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/db/DB_ORMRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/db/DB_ORMRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/db/model/StudentCityEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/db/model/StudentEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,13 +65,19 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "vk__api",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "db",
     "last_opened_file_path": "F:/topsecrets/coding/Projects/Ulearn_BP_Analytics",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="org.ulearn.analytics" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.ulearn.analytics.Main" />

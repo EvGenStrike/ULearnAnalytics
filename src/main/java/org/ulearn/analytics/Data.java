@@ -6,14 +6,17 @@ public class Data {
     private ArrayList<Topic> topics = new ArrayList<>();
     private ArrayList<Student> students = new ArrayList<>();
     private ArrayList<Task> tasks = new ArrayList<>();
+    private ArrayList<TaskResult> taskResults = new ArrayList<>();
 
     public Data(
             ArrayList<Topic> topics,
             ArrayList<Student> students,
-            ArrayList<Task> tasks){
+            ArrayList<Task> tasks,
+            ArrayList<TaskResult> taskResults){
         this.topics = topics;
         this.students = students;
         this.tasks = tasks;
+        this.taskResults = taskResults;
     }
 
     public ArrayList<Topic> getTopics(){
@@ -26,6 +29,10 @@ public class Data {
 
     public ArrayList<Task> getTasks(){
         return tasks;
+    }
+
+    public ArrayList<TaskResult> getTaskResults(){
+        return taskResults;
     }
 
     @Override

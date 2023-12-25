@@ -9,6 +9,7 @@ import org.ulearn.analytics.visualization.drawer.BarChartDrawer;
 import org.ulearn.analytics.visualization.drawer.FrameDrawer;
 import org.ulearn.analytics.visualization.drawer.LineChartDrawer;
 import org.ulearn.analytics.visualization.drawer.PieChartDrawer;
+import org.ulearn.analytics.vkApi.VkReader;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,7 +23,7 @@ public class Main {
     public static void main(String[] args) throws Exception{
 //        var csvFileName = "basicprogramming_2_1.csv";
 //        data = buildDataFromCSV(csvFileName);
-
+//
 //        var vkReader = new VkReader(data);
 //        vkReader.addCitiesToStudents();
 

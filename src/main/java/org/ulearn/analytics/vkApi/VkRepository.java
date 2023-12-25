@@ -1,4 +1,4 @@
-package org.ulearn.analytics;
+package org.ulearn.analytics.vkApi;
 
 import com.vk.api.sdk.client.TransportClient;
 import com.vk.api.sdk.client.VkApiClient;
@@ -37,13 +37,32 @@ public class VkRepository {
     }
 
     public List<UserXtrRole> getSubscribedStudentsWithCity() throws ClientException, ApiException {
-        var result = vk.groups()
-                .getMembersWithFields(actor, Fields.CITY)
-                .groupId(URFU_CLUB_ID)
-                .execute()
-                .getItems();
+        int offest = 0;
+        List<UserXtrRole> membersList = new ArrayList<>();
 
-        return result;
+        while (true){
+            var queryResult = vk.groups()
+                    .getMembersWithFields(actor, Fields.CITY)
+                    .groupId(URFU_CLUB_ID)
+                    .offset(offest)
+                    .execute()
+                    .getItems();
+
+            System.out.printf("Size of current vk query: %s%n", queryResult.size());
+            System.out.printf("Size of current offset: %s%n%n", offest);
+
+            offest += 1000;
+            membersList.addAll(queryResult);
+
+            if (offest > (long) membersList.size()){
+                break;
+            }
+        }
+
+        System.out.printf("Size of vk query: %s", membersList.size());
+
+
+        return membersList;
     }
 
     private Map<String, String> getConfigParams(){

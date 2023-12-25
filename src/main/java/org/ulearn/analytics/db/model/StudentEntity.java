@@ -5,6 +5,7 @@ import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "student")
 public class StudentEntity {
+    public static final String STUDENT_ID_COLUMN = "studentID";
     public static final String NAME_COLUMN = "name";
     public static final String SURNAME_COLUMN = "surname";
     public static final String GROUP_COLUMN = "group";
@@ -42,5 +43,21 @@ public class StudentEntity {
 
     public long getStudentID(){
         return studentID;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getGroup(){
+        return group;
+    }
+
+    public String getCity() {
+        return city;
     }
 }

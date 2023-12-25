@@ -1,10 +1,9 @@
 package org.ulearn.analytics.db;
 
-import org.ulearn.analytics.Student;
+import org.ulearn.analytics.models.Student;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class DBRepository {

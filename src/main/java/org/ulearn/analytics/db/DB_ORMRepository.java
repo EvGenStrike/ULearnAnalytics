@@ -6,10 +6,10 @@ import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.stmt.Where;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
-import org.ulearn.analytics.Student;
-import org.ulearn.analytics.Task;
-import org.ulearn.analytics.TaskResult;
-import org.ulearn.analytics.Topic;
+import org.ulearn.analytics.models.Student;
+import org.ulearn.analytics.models.Task;
+import org.ulearn.analytics.models.TaskResult;
+import org.ulearn.analytics.models.Topic;
 import org.ulearn.analytics.db.model.StudentEntity;
 import org.ulearn.analytics.db.model.TaskEntity;
 import org.ulearn.analytics.db.model.TaskResultEntity;
@@ -83,23 +83,82 @@ public class DB_ORMRepository {
         return studentDao.queryForAll();
     }
 
-    public List<StudentEntity> getStudentsByFullName(String name, String surname) throws SQLException{
-        return studentDao.queryBuilder()
-                .where()
-                .eq(StudentEntity.NAME_COLUMN, name)
-                .and()
-                .eq(StudentEntity.SURNAME_COLUMN, surname)
-                .query();
+    public List<TopicEntity> getTopics() throws SQLException{
+        return topicDao.queryForAll();
+    }
+
+    public List<TaskEntity> getTasks() throws SQLException{
+        return taskDao.queryForAll();
+    }
+
+    public List<TaskResultEntity> getTaskResults() throws SQLException{
+        return taskResultDao.queryForAll();
     }
 
     public void close() throws Exception{
         connectionSource.close();
     }
 
+    public Task createTaskByTaskID(long taskID) throws SQLException {
+        TaskEntity taskEntity = getTaskEntityByTaskID(taskID);
+        TopicEntity topicEntity = getTopicEntityByTaskID(taskEntity.getTaskID());
+
+        Topic relatedTopic = new Topic(topicEntity.getTopicName());
+        return new Task(taskEntity.getTaskType(),taskEntity.getMaxPoints(), relatedTopic, taskEntity.getTaskName());
+    }
+
+    public Topic createTopicByTopicID(long topicID) throws SQLException {
+        TopicEntity topicEntity = topicDao.queryBuilder()
+                .where()
+                .eq(TopicEntity.TOPIC_ID_COLUMN, topicID)
+                .query()
+                .get(0);
+        return new Topic(
+                topicEntity.getTopicName());
+    }
+
+    public Student createStudentByStudentID(long studentID) throws SQLException {
+        StudentEntity studentEntity = studentDao.queryBuilder()
+                .where()
+                .eq(StudentEntity.STUDENT_ID_COLUMN, studentID)
+                .query()
+                .get(0);
+        return new Student(
+                studentEntity.getName(),
+                studentEntity.getSurname(),
+                studentEntity.getGroup(),
+                studentEntity.getCity());
+    }
+
+    public TaskEntity getTaskEntityByTaskID(long taskID) throws SQLException {
+        return taskDao.queryBuilder()
+                .where()
+                .eq(TaskEntity.TASK_ID_COLUMN, taskID)
+                .query()
+                .get(0);
+    }
+
+    public TopicEntity getTopicEntityByTaskID(long taskID) throws SQLException {
+        return topicDao.queryBuilder()
+                .where()
+                .eq(TopicEntity.TOPIC_ID_COLUMN, getTopicIDByTaskID(taskID))
+                .query()
+                .get(0);
+    }
+
     private long getTopicID(Task task) throws SQLException {
         return topicDao.queryBuilder()
                 .where()
                 .eq(TopicEntity.TOPIC_NAME_COLUMN, task.getTopic().getTopicName())
+                .query()
+                .get(0)
+                .getTopicID();
+    }
+
+    private long getTopicIDByTaskID(long taskID) throws SQLException {
+        return taskDao.queryBuilder()
+                .where()
+                .eq(TaskEntity.TASK_ID_COLUMN, taskID)
                 .query()
                 .get(0)
                 .getTopicID();
@@ -116,7 +175,9 @@ public class DB_ORMRepository {
                 where.eq(TaskEntity.MAX_POINTS_COLUMN, taskResult.getTask().getMaxPoints()),
                 where.or(
                         where.isNull(TaskEntity.TASK_NAME_COLUMN),
-                        where.eq(TaskEntity.TASK_NAME_COLUMN, taskResult.getTask().getTaskName())
+                        where.eq(TaskEntity.TASK_NAME_COLUMN, taskResult.getTask().getTaskName() == null
+                                ? ""
+                                : taskResult.getTask().getTaskName())
                 )
                 )
                 .query()

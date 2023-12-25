@@ -2,11 +2,11 @@ package org.ulearn.analytics.db.model;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
-import org.ulearn.analytics.Task;
-import org.ulearn.analytics.TaskType;
+import org.ulearn.analytics.models.TaskType;
 
 @DatabaseTable(tableName = "task")
 public class TaskEntity {
+    public static final String TASK_ID_COLUMN = "taskID";
     public static final String TASK_NAME_COLUMN = "taskName";
     public static final String TASK_TYPE_COLUMN = "taskType";
     public static final String MAX_POINTS_COLUMN = "maxPoints";
@@ -36,13 +36,29 @@ public class TaskEntity {
         this.topicID = topicID;
     }
 
+    public long getTaskID(){
+        return taskID;
+    }
+
+    public String getTaskName(){
+        return taskName;
+    }
+
+    public TaskType getTaskType() {
+        return taskType;
+    }
+
+    public int getMaxPoints(){
+        return maxPoints;
+    }
+
+    public long getTopicID(){
+        return topicID;
+    }
+
     @Override
     public String toString(){
         return String.format("TaskEntity{%ntaskName=%s%ntaskType=%s%nmaxPoints=%s%ntopicID=%s%n}%n",
                 taskName, taskType, maxPoints, topicID);
-    }
-
-    public long getTaskID(){
-        return taskID;
     }
 }

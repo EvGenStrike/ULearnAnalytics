@@ -1,7 +1,8 @@
-package org.ulearn.analytics;
+package org.ulearn.analytics.vkApi;
 
 import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ClientException;
+import org.ulearn.analytics.models.Data;
 
 public class VkReader {
     private final Data data;
@@ -28,7 +29,6 @@ public class VkReader {
                     continue;
                 }
                 var city = optionalCity.get().getCity();
-                System.out.println(city);
                 if (city == null){
                     continue;
                 }

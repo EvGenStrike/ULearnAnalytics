@@ -1,8 +1,10 @@
-package org.ulearn.analytics;
+package org.ulearn.analytics.csvParser;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.ulearn.analytics.models.TaskType;
+import org.ulearn.analytics.models.*;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -100,7 +102,7 @@ public class CSVReader {
             case "Сем":
                 return TaskType.SEMINAR;
             default:
-                return null;
+                return TaskType.UNDEFINED;
         }
     }
 

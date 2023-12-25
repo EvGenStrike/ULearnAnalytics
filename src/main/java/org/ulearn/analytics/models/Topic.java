@@ -1,4 +1,4 @@
-package org.ulearn.analytics;
+package org.ulearn.analytics.models;
 
 import javax.management.InstanceNotFoundException;
 import java.util.ArrayList;

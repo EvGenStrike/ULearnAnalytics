@@ -1,4 +1,4 @@
-package org.ulearn.analytics;
+package org.ulearn.analytics.models;
 
 public class TaskResult {
     private Task task;

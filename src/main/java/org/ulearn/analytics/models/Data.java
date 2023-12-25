@@ -1,4 +1,4 @@
-package org.ulearn.analytics;
+package org.ulearn.analytics.models;
 
 import java.util.ArrayList;
 

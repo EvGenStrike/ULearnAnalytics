@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31c2849a-6a05-4bdb-8d34-eab1a61ac456" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/test.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/CSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/csvParser/CSVReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/models/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/models/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/models/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/TaskResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/models/TaskResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/TaskType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/models/TaskType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/models/Topic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/VkReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/vkApi/VkReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/VkRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/vkApi/VkRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/db/DBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/db/DBRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/db/DB_ORMRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/db/DB_ORMRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/db/model/StudentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/db/model/StudentEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/db/model/TaskEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/db/model/TaskEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/db/model/TaskResultEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/db/model/TaskResultEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/db/model/TopicEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulearn/analytics/db/model/TopicEntity.java" afterDir="false" />
-    </list>
+    <list default="true" id="31c2849a-6a05-4bdb-8d34-eab1a61ac456" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,7 +51,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "visualization",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "F:/topsecrets/coding/Projects/Ulearn_BP_Analytics",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",

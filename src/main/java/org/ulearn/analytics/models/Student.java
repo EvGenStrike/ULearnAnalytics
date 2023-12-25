@@ -1,4 +1,4 @@
-package org.ulearn.analytics;
+package org.ulearn.analytics.models;
 
 import java.util.ArrayList;
 
@@ -15,12 +15,35 @@ public class Student {
         this.group = group;
     }
 
+    public Student(String name, String surname, String group, String city){
+        this.name = name;
+        this.surname = surname;
+        this.group = group;
+        this.city = city;
+    }
+
     public String getName(){
         return name;
     }
 
     public String getSurname(){
         return surname;
+    }
+
+    public String getFullName(){
+        return String.format("%s %s", surname, name);
+    }
+
+    public String getGroup(){
+        return group;
+    }
+
+    public String getCity(){
+        return this.city;
+    }
+
+    public void setCity(String city){
+        this.city = city;
     }
 
     public void addTaskResult(TaskResult taskResult){
@@ -33,14 +56,6 @@ public class Student {
 
     public ArrayList<TaskResult> getTaskResults(){
         return taskResults;
-    }
-
-    public void setCity(String city){
-        this.city = city;
-    }
-
-    public String getCity(){
-        return this.city;
     }
 
     @Override

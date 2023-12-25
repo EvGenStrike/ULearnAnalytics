@@ -1,8 +1,9 @@
-package org.ulearn.analytics;
+package org.ulearn.analytics.models;
 
 public enum TaskType {
     EXERCISE,
     HOMEWORK,
     ACTIVITY,
-    SEMINAR
+    SEMINAR,
+    UNDEFINED
 }

@@ -1,8 +1,10 @@
-package org.ulearn.analytics;
+package org.ulearn.analytics.csvParser;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.ulearn.analytics.models.TaskType;
+import org.ulearn.analytics.models.*;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,6 +18,7 @@ public class CSVReader {
     private ArrayList<Topic> topics = new ArrayList<>();
     private ArrayList<Student> students = new ArrayList<>();
     private ArrayList<Task> tasks = new ArrayList<>();
+    private ArrayList<TaskResult> taskResults = new ArrayList<>();
 
     public Data buildDataFrom(String csvFileName){
         CSVFormat csvFormat = CSVFormat.DEFAULT.withDelimiter(CUSTOM_DELIMITER);
@@ -54,7 +57,7 @@ public class CSVReader {
             e.printStackTrace();
         }
 
-        return new Data(topics, students, tasks);
+        return new Data(topics, students, tasks, taskResults);
     }
 
     private ArrayList<Topic> buildTopics(
@@ -99,7 +102,7 @@ public class CSVReader {
             case "Сем":
                 return TaskType.SEMINAR;
             default:
-                return null;
+                return TaskType.UNDEFINED;
         }
     }
 
@@ -133,7 +136,8 @@ public class CSVReader {
 
         var i = 2;
         for (var task : tasks){
-            var taskResult = new TaskResult(task, Integer.parseInt(values[i]));
+            var taskResult = new TaskResult(task, Integer.parseInt(values[i]), student);
+            taskResults.add(taskResult);
             student.addTaskResult(taskResult);
             i++;
         }

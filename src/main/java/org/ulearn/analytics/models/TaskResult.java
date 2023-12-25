@@ -1,20 +1,26 @@
-package org.ulearn.analytics;
+package org.ulearn.analytics.models;
 
 public class TaskResult {
     private Task task;
     private int currentPoints;
+    private Student student;
 
-    public TaskResult(Task task, int currentPoint){
+    public TaskResult(Task task, int currentPoint, Student student){
         this.task = task;
         this.currentPoints = currentPoint;
+        this.student = student;
     }
 
-    private Task getTask(){
+    public Task getTask(){
         return task;
     }
 
-    private int getCurrentPoints(){
+    public int getCurrentPoints(){
         return currentPoints;
+    }
+
+    public Student getStudent(){
+        return student;
     }
 
     @Override

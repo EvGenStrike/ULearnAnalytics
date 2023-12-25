@@ -6,8 +6,10 @@ import org.ulearn.analytics.db.mapper.DBMapper;
 import org.ulearn.analytics.models.*;
 import org.ulearn.analytics.statisticsBuilder.StatisticsBuilder;
 import org.ulearn.analytics.visualization.drawer.BarChartDrawer;
+import org.ulearn.analytics.visualization.drawer.FrameDrawer;
 import org.ulearn.analytics.visualization.drawer.LineChartDrawer;
 import org.ulearn.analytics.visualization.drawer.PieChartDrawer;
+import org.ulearn.analytics.vkApi.VkReader;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,7 +23,7 @@ public class Main {
     public static void main(String[] args) throws Exception{
 //        var csvFileName = "basicprogramming_2_1.csv";
 //        data = buildDataFromCSV(csvFileName);
-
+//
 //        var vkReader = new VkReader(data);
 //        vkReader.addCitiesToStudents();
 
@@ -51,39 +53,7 @@ public class Main {
 
     private static void visualize() throws Exception {
         DBMapper dbMapper = new DBMapper(dbOrm);
-
-        ArrayList<Student> students = dbMapper.getStudents();
-
-        ArrayList<TaskResult> taskResults = dbMapper.getTaskResults();
-        HashMap<String, Double> avgScoreByCity = StatisticsBuilder.buildAvgScoreByCityStatistics(taskResults);
-
-        ArrayList<Task> tasks = dbMapper.getTasks();
-        Map<String, Double> topicPercentageCompletion
-                = StatisticsBuilder.buildTopicPercentageCompletion(taskResults, tasks);
-
-        SwingUtilities.invokeLater(() -> {
-
-            JFrame mainFrame = new JFrame("Main Frame");
-            mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            mainFrame.setExtendedState(Frame.MAXIMIZED_BOTH);
-            mainFrame.setSize(600, 300);
-
-            JTabbedPane tabbedPane = new JTabbedPane();
-
-            JPanel pieChartPanel = PieChartDrawer.createStudentsByCitiesPanel(students);
-            tabbedPane.addTab("Студенты по городам", pieChartPanel);
-
-            JPanel barChartPanel = BarChartDrawer.createAverageScoreByCityPanel(avgScoreByCity);
-            tabbedPane.addTab("Средний балл по городам", barChartPanel);
-
-            JPanel lineChartPanel = LineChartDrawer.createTopicPercentageCompletionPanel(topicPercentageCompletion);
-            tabbedPane.addTab("% прохождения темы", lineChartPanel);
-
-            mainFrame.getContentPane().add(tabbedPane, BorderLayout.CENTER);
-            mainFrame.setSize(800, 600);
-            mainFrame.setLocationRelativeTo(null);
-            mainFrame.setVisible(true);
-        });
+        FrameDrawer.createFrame(dbMapper);
     }
 
     private static void printTopics(Data data){
